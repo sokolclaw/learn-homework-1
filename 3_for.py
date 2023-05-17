@@ -1,27 +1,30 @@
-"""
 
-Домашнее задание №1
+# * Посчитать и вывести суммарное количество продаж для каждого товара
+# * Посчитать и вывести среднее количество продаж для каждого товара
+# * Посчитать и вывести суммарное количество продаж всех товаров
+# * Посчитать и вывести среднее количество продаж всех товаров
 
-Цикл for: Продажи товаров
 
-* Дан список словарей с данными по колличеству проданных телефонов
-  [
-    {'product': 'iPhone 12', 'items_sold': [363, 500, 224, 358, 480, 476, 470, 216, 270, 388, 312, 186]}, 
-    {'product': 'Xiaomi Mi11', 'items_sold': [317, 267, 290, 431, 211, 354, 276, 526, 141, 453, 510, 316]},
-    {'product': 'Samsung Galaxy 21', 'items_sold': [343, 390, 238, 437, 214, 494, 441, 518, 212, 288, 272, 247]},
-  ]
-* Посчитать и вывести суммарное количество продаж для каждого товара
-* Посчитать и вывести среднее количество продаж для каждого товара
-* Посчитать и вывести суммарное количество продаж всех товаров
-* Посчитать и вывести среднее количество продаж всех товаров
-"""
+products = [
+      {'product': 'iPhone 12', 'items_sold': [363, 500, 224, 358, 480, 476, 470, 216, 270, 388, 312, 186]}, 
+      {'product': 'Xiaomi Mi11', 'items_sold': [317, 267, 290, 431, 211, 354, 276, 526, 141, 453, 510, 316]},
+      {'product': 'Samsung Galaxy 21', 'items_sold': [343, 390, 238, 437, 214, 494, 441, 518, 212, 288, 272, 247]},
+    ]
 
-def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
-    
+def main(products):
+    all_product_sales = 0
+    one_product_sales = 0
+    all_sales_count = 0
+    for i in range(len(products)):
+        for j in range(len(products[i]['items_sold'])):
+            one_product_sales += products[i]['items_sold'][j]
+        print(f'Суммарное количество продаж {products[i]["product"]}: {one_product_sales}')
+        print(f'Среднее количество продаж {products[i]["product"]}: {round(one_product_sales / len(products[i]["items_sold"]), 2)}')   
+        all_product_sales += one_product_sales
+        all_sales_count += len(products[i]['items_sold'])
+        one_product_sales = 0
+    print(f'Суммарное количество всех продаж: {all_product_sales}')
+    print(f'Среднее количество всех продаж: {round(all_product_sales / all_sales_count, 2)}')     
+
 if __name__ == "__main__":
-    main()
+    print(main(products))
