@@ -14,13 +14,19 @@
   и выводя на экран результаты
 
 """
+text1 = input()
+text2 = input()
 
-def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+def compare_text(text1, text2):
+    if type(text1) != str or type(text2) != str:
+        return 0
+    if text1 == text2:
+        return 1
+    if len(text1) > len(text2):
+        return 2
+    if text2 == 'learn':
+        return 3
+    return None
     
 if __name__ == "__main__":
-    main()
+    print(compare_text(text1, text2))
