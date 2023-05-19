@@ -15,13 +15,14 @@ def main(products):
     all_product_sales = 0
     one_product_sales = 0
     all_sales_count = 0
-    for i in range(len(products)):
-        for j in range(len(products[i]['items_sold'])):
-            one_product_sales += products[i]['items_sold'][j]
-        print(f'Суммарное количество продаж {products[i]["product"]}: {one_product_sales}')
-        print(f'Среднее количество продаж {products[i]["product"]}: {round(one_product_sales / len(products[i]["items_sold"]), 2)}')   
+    for item in products:  
+        product, items_sold = item.values()
+        for sale in items_sold:
+            one_product_sales += sale
+        print(f'Суммарное количество продаж {product}: {one_product_sales}')
+        print(f'Среднее количество продаж {product}: {round(one_product_sales / len(items_sold), 2)}')   
         all_product_sales += one_product_sales
-        all_sales_count += len(products[i]['items_sold'])
+        all_sales_count += len(items_sold)
         one_product_sales = 0
     print(f'Суммарное количество всех продаж: {all_product_sales}')
     print(f'Среднее количество всех продаж: {round(all_product_sales / all_sales_count, 2)}')     

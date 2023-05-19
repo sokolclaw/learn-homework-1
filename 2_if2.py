@@ -20,7 +20,7 @@ text2 = input()
 def main(text1, text2):
     if type(text1) != str or type(text2) != str:
         return 0
-    elif len(text1) == len(text2):
+    elif text1 == text2:
         return 1
     elif len(text1) > len(text2):
         return 2
