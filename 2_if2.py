@@ -17,15 +17,16 @@
 text1 = input()
 text2 = input()
 
-def main(text1, text2):
+def compare_text(text1, text2):
     if type(text1) != str or type(text2) != str:
         return 0
-    elif text1 == text2:
+    if text1 == text2:
         return 1
-    elif len(text1) > len(text2):
+    if len(text1) > len(text2):
         return 2
-    elif text2 == 'learn':
+    if text2 == 'learn':
         return 3
+    return None
     
 if __name__ == "__main__":
-    print(main(text1, text2))
+    print(compare_text(text1, text2))

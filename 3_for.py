@@ -11,7 +11,7 @@ products = [
       {'product': 'Samsung Galaxy 21', 'items_sold': [343, 390, 238, 437, 214, 494, 441, 518, 212, 288, 272, 247]},
     ]
 
-def main(products):
+def find_sales(products):
     all_product_sales = 0
     one_product_sales = 0
     all_sales_count = 0
@@ -28,4 +28,4 @@ def main(products):
     print(f'Среднее количество всех продаж: {round(all_product_sales / all_sales_count, 2)}')     
 
 if __name__ == "__main__":
-    print(main(products))
+    print(find_sales(products))

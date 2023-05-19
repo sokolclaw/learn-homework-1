@@ -15,7 +15,7 @@
 """
 age = int(input('Введите возраст: '))
 
-def main(age):
+def what_age(age):
     if  0 < age < 7:
         return 'Пользователь должен ходить в детский сад' 
     elif 7 <= age < 18:
@@ -30,4 +30,4 @@ def main(age):
         return 'Пользователь еще не существует'
 
 if __name__ == "__main__":
-    print(main(age))
+    print(what_age(age))
